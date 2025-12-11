@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+<p id="msg"></p>
+        <button id="submit" onclick="submitted()">click</button>
+        <ul id="list"></ul>
+        <p id="name"></p>
+        <input type="text" id="inp" placeholder="Enter the name">
+        <button id="submit">submit</button>
+        <p id="num">0</p>
+        <button id="inc">increment</button>
+        <button id="dec">decrement</button>
+        <button id="reset">reset</button>-->
+     <h1>Rock Paper Scissor</h1>
+     <button onclick="getResult('Rock')">Rock</button>
+     <button onclick="getResult('paper')">Paper</button>
+     <button onclick="getResult('Scissor')">Scissor</button>
+     <p id="result"></p>
+     <p id="title">Hello World!</p>
+     <button id="toggle">toggle</button>
+    <script>
+
+      var toggle=()=>{
+        var color =['red','green','orange','yellow','white','black'];
+        var index=Math.floor(Math.random()*color.length);
+        document.querySelector('body').style.backgroundColor=color[index];
+      }
+      var buttonClicked=()=>{
+        var title=document.getElementById('title');
+        var result=title.innerText==="Hello World!"?"Hello vibbhu":""
+        title.innerText=result;
+      }
+
+        const getResult=(userChoice)=>{
+            var choice=['rock','paper','scissor'];
+            var computerChoice=choice[math.floor(math.random()*3)];
+            console.log(computerChoice);
+            var result="";
+            if(userChoice===computerChoice)result="Draw"
+            else if((userChoice==="rock"&&computerChoice==="paper")||(userChoice==="paper"&&computerChoice==="scissor")||(userChoice==="scissor"&&computerChoice==="rock")){
+                result="loss";
+            }
+            else{
+                result="win";
+            }
+            document.getElementById("result")
+
+        }
+        
+
+        
+
+
+
+
+
+<!--
+               //var count=0;
+       // document.getElementById('inc').addEventListener('Click',()=>{
+           // count+=1;
+            //document.getElementById('num').innerText=count;
+        //})
+        //document.getElementById('dec').addEventListener('click',()=>{
+          //  count-=1;
+            //document.getElementById('num').innerText=count;
+        //})
+        //document.getElementById('reset').addEventListener('click',()=>{
+          //  count=0;
+            //document.getElementById('num').innerText=0;
+        //})
+        //document.getElementById("submit").addEventListener("click",()=>{
+          //var text=document.getElementById("inp").value;
+          //document.getElementById("name").innerText=text;
+        //})
+        //var submitted=()=>{
+          //  alert("hi")
+
+        //}
+        //var li=document.createElement("li");
+        //li.innerText="One";
+        //document.getElementById("list").append(li);
+        //document.getElementById('submit').addEventListener("click",()=>{
+          //  document.getElementById("msg").innerText="Hello World"
+        //});
+-->
+
+
+      //  document.getElementById('msg').style.color="Red"
+       //var item= document.getElementsByClassName('item');
+       //item[0].style.color="Green";
+       //document.querySelector('.p').style.backgroundColor="blue";
+    </script>
+</body>
+</html>

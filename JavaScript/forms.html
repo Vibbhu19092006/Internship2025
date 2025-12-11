@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Personal Info. forms</h1>
+    <form id="myform">
+        <input type="text" name="username" placeholder="enter your name"> <br><br>
+        <input type="text" name="college"  placeholder="Enter Your College Name"><br><br>
+        <input type="number"name="number"  placeholder="Enter your mobile number"><br><br>
+        <input type="Email" name="email" placeholder="Enter your email"><br><br>
+        <input type="text" name="pwd" placeholder="enter your password"><br><br>
+        <button type="submit"> Submit</button>
+        <button type="submit">Remove</button>
+
+    </form>
+<script>
+    document.getElementById('myform').addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const email=document.getElementById("email").value;
+        const password=document.getElementById("pwd").value;
+        var status="";
+        if(email==="vibbhu@gmail.com"&&password==="vibbhu"){
+            status="Login Successful";
+
+        }
+        else{
+            status="invalid login";
+        }
+        document.getElementById('status').innerText=status;
+    })
+
+
+   document.getElementById("myform").addEventListener("submit",function(event){
+    event.preventDefault();
+    const formdata=new FormData(event.target);
+    for(let[key,value] of formdata.entries()){
+        console.log(key+":"+value);
+    }
+   });
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.h2{
+    background-color: antiquewhite;
+    color: brown;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.Navbar{
+    color: aqua;
+}
+.ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px;
+
+}
+.li{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 2px;
+}
+.li:hover{
+    background-color: aqua;
+    color: black;
+    border-radius: 3px;
+}
