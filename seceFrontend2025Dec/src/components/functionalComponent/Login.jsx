@@ -8,7 +8,7 @@ const  Login=()=>{
     const navigate=useNavigate();
     const handleLogin=async(event)=>{
         event.preventDefault()
-        const req=await axios.post('hhtp://localhost:8001',{
+        const req=await axios.post('https://backend-mern-internship.onrender.com/login',{
             email:email,
             password:password
         })
