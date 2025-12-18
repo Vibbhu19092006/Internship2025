@@ -11,6 +11,7 @@ import About from './components/functionalComponent/About.jsx'
 import LearningReact from './components/functionalComponent/LearningReact.jsx'
 import Contact from './components/functionalComponent/Contact.jsx'
 import UseState from './components/functionalComponent/Hooks/UseState.jsx'
+import Login from './components/functionalComponent/Login.jsx'
 function App() {
   
   return (
@@ -21,8 +22,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
          <Route path="/about" element={<About/>}/>
-         <Route path="/learn-react" element={<LearningReact/>}/>
+         <Route path="/learn-react/*" element={<LearningReact/>}/>
          <Route path="/contact" element={<Contact/>}/>
+         <Route path="/login" element={<Login/>}/>
 
           Home
         

@@ -1,28 +1,70 @@
-import "../../css/App.css"
-import Props from "./Props.jsx";
-import State from "./State.jsx";
-import Home from "./Home.jsx";
-import About from "./About.jsx";
-import LearningReact from "./LearningReact.jsx"
-import Contact from "./Contact.jsx";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../../css/App.css";
 
-function Navbar(props){
-    return(
-        <>
-            <nav style={{backgroundColor:"black",color:"aqua"}}>
-                <ul class="ul" >
-                    <Link to="/"><li class="li">Home</li></Link>
-                    <Link to="/about"><li class="li">About</li></Link>
-                    <Link to="/learn-react"><li class="li">LearningReact</li></Link>
-                    <Link to="/contact"><li class="li">Contact.</li></Link>
-                    
-                   
-                </ul>
+function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [isLogin, setLogin] = useState(true);
 
-            </nav>
-            <p>The above content is Navbar </p>
-        </>
-    );
-};
+  const navigate = useNavigate(); 
+
+  const handleLogin = () => {
+    setLogin(false);
+    navigate("/"); 
+  };
+
+  const handleLogout = () => {
+    setLogin(true);
+    navigate("/login");
+  };
+
+  return (
+    <nav style={{ backgroundColor: "black", color: "aqua" }}>
+      <ul className="ul">
+        <li className="li"><Link to="/">Home</Link></li>
+        <li className="li"><Link to="/about">About</Link></li>
+
+        <li
+          className="li dropdown"
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
+        >
+          Learning React
+          {open && (
+            <ul className="dropdown-menu">
+              <li><Link to="/learn-react/usestate">useState</Link></li>
+              <li><Link to="/learn-react/useeffect">useEffect</Link></li>
+              <li><Link to="/learn-react/useeffect-api">useEffect API</Link></li>
+              <li><Link to="/learn-react/useref">useRef</Link></li>
+              <li><Link to="/learn-react/usememo">useMemo</Link></li>
+              <li><Link to="/learn-react/usecallback">useCallback</Link></li>
+            </ul>
+          )}
+        </li>
+
+        <li className="li"><Link to="/contact">Contact</Link></li>
+
+       
+        <li className="li">
+          {isLogin ? (
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={handleLogin}  
+            >
+              Login
+            </span>
+          ) : (
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={handleLogout}  
+            >
+              Logout
+            </span>
+          )}
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
 export default Navbar;
